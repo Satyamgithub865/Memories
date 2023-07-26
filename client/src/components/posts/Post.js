@@ -14,6 +14,19 @@ const Tags = styled(Typography)({
     fontFamily: 'revert',
     marginTop: 0,
     wordWrap: 'break-word'
+});
+
+const Image = styled('img')(({ theme }) => ({
+    height: 194,
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+        height: 190
+    }
+}));
+
+const LikeContainer = styled(Box)({
+    display: 'flex',
+    alignItems: 'center',
 })
 
 
@@ -73,13 +86,7 @@ const Post = ({ post }) => {
                 subheader={new Date(post.createdAt).toDateString()}
             />
             <Link to={`/posts/${post._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <CardMedia
-                    component="img"
-                    height="194"
-                    style={{ objectFit: 'cover' }}
-                    image={post.selectedFile}
-                    alt="post-image"
-                />
+                <Image src={post?.selectedFile} alt="post-image" />
                 <CardContent style={{ padding: '8px 12px', height: 90 }}>
                     <Tags>
                         {post?.tags && post?.tags?.slice(0, 3).map((tag) => (`#${tag}\u00A0\u00A0`))}
@@ -91,7 +98,7 @@ const Post = ({ post }) => {
             </Link>
             <CardActions >
                 <Box style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                    <Box style={{ display: 'flex', alignItems: 'center' }}>
+                    <LikeContainer>
                         <IconButton aria-label="Favorite" disabled={tokenId ? false : true} onClick={() => likePost(post?._id)}>
                             {
                                 toggle ? <Favorite /> :
@@ -99,7 +106,7 @@ const Post = ({ post }) => {
                             }
                         </IconButton>
                         <Typography>{post?.likes?.length}</Typography>
-                    </Box>
+                    </LikeContainer>
                     {tokenId && tokenId === post?.creator && <Delete onClick={() => deletePost(post?._id)} style={{ cursor: 'pointer', color: 'red' }} />}
                 </Box>
             </CardActions>

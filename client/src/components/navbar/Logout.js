@@ -21,12 +21,21 @@ const Text = styled(Typography)(({theme}) => ({
     [theme.breakpoints.down('md')]: {
         fontSize: 14,
         padding: '6px 12px'
+    },
+    [theme.breakpoints.down('sm')]: {
+        display: 'none'
     }
 }));
 
-const LogoutBtn = styled(Button)({
-    backgroundColor: '#e6005c'
-})
+const LogoutBtn = styled(Button)(({theme}) => ({
+    backgroundColor: '#e6005c',
+    [theme.breakpoints.down('sm')]: {
+        width: 60,
+        fontSize: 12,
+        padding: '8px 10px',
+        marginLeft: 8
+    }
+}));
 
 const Logout = ({ setUser, user }) => {
     const dispatch = useDispatch();

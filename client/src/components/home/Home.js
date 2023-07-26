@@ -29,7 +29,7 @@ const CreateContainer = styled(Box)(({ theme }) => ({
     marginTop: '20px',
     cursor: 'pointer',
     [theme.breakpoints.down('md')]: {
-        width: '280px',
+        width: '260px',
     }
 }));
 
@@ -40,6 +40,20 @@ const GridContainer = styled(Grid)(({ theme }) => ({
         padding: 20,
     }
 }));
+
+const LeftGrid = styled(Grid)(({ theme }) => ({
+    padding: 30,
+    [theme.breakpoints.down('sm')]: {
+        padding: 0
+    }
+}))
+
+const RightGrid = styled(Grid)(({ theme }) => ({
+    padding: 30,
+    [theme.breakpoints.down('sm')]: {
+        padding: 0
+    }
+}))
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -62,10 +76,10 @@ const Home = () => {
 
     return (
         <GridContainer container >
-            <Grid item xs={12} sm={12} md={9} lg={9} xl={9} style={{ padding: 30 }}>
+            <LeftGrid item xs={12} sm={12} md={9} lg={9} xl={9}>
                 <Posts />
-            </Grid>
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={3} style={{ padding: 30 }}>
+            </LeftGrid>
+            <RightGrid item xs={12} sm={12} md={3} lg={3} xl={3} >
                 <CreateContainer className='zoomButton' onClick={() => getToken()}>
                     <img src={camera} style={{ width: 100 }} alt="camera" />
                     <CreateBtn variant='contained'>Create your memory</CreateBtn>
@@ -74,7 +88,7 @@ const Home = () => {
                 <Paper elevation={6}>
                     <Paginations page={page} />
                 </Paper>
-            </Grid>
+            </RightGrid>
         </GridContainer>
     )
 }

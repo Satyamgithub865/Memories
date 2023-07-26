@@ -9,26 +9,32 @@ import { useDispatch } from 'react-redux';
 
 const Header = styled(AppBar)({
     background: '#fff',
-    padding: 5
+    padding: 5,
 })
 
-const Container = styled(Box)`
-    & > a {
-        color: #00cc00;
-        text-decoration: none;
-        font-size: 25px;
-        margin-right: 30px;
-        font-family: roboto;
-        font-weight: 600;
-        cursor: pointer;
-        &:hover {
-            color: #000;
+const Container = styled(Box)(({theme}) => ({
+    '& > a': {
+        color: '#00cc00',
+        textDecoration: 'none',
+        fontSize: '25px',
+        marginRight: '30px',
+        fontFamily: 'roboto',
+        fontWeight: 600,
+        cursor: 'pointer',
+        '&:hover': {
+            color: '#000'
         }
+    },
+    display: 'flex',
+    marginLeft: 'auto',
+    padding: '10px',
+    [theme.breakpoints.down('sm')]: {
+        '& > a': {
+            fontSize: 15,
+            marginRight: 10,
+        },
     }
-    display: flex;
-    margin-left: auto;
-    padding: 10px;
-`
+}));
 
 const Navbar = () => {
     const location = useLocation();
