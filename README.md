@@ -5,14 +5,15 @@ Welcome to Memories, a full-stack MERN (MongoDB, Express, React, Node.js) applic
 ## Introduction
 Memories is a social media platform where users can share their special moments with others. Whether it's an exciting trip, a family gathering, or a personal achievement, users can create posts with images and descriptions to capture and cherish these memories. The application provides a user-friendly interface to interact with posts, allowing users to comment on posts and show appreciation by liking them.
 ## Features
-1.	User Authentication: Users can sign up, log in, and log out securely using JWT.
-2.	Create Memory: Authenticated users can create new posts with images, descriptions and tags.
-3.	Update & Delete Memory: Users can edit and delete their own memories.
-4.	Comment on Memories: Users can comment on each other's posts, fostering a sense of community.
-5.	Like Memories: Users can express their appreciation for a memory by liking it.
-6.	User Profiles: Each user has a personalized profile page displaying their posts and information.
-7.	Recommendation: App recommends memories based on the current memories tags.
-8.	Search: Search is implemented based in title and tags.
+1.  Fully responsive user interface
+2.	User Authentication: Users can sign up, log in, and log out securely using JWT.
+3.	Create Memory: Authenticated users can create new posts with images, descriptions and tags.
+4.	Update & Delete Memory: Users can edit and delete their own memories.
+5.	Comment on Memories: Users can comment on each other's posts, fostering a sense of community.
+6.	Like Memories: Users can express their appreciation for a memory by liking it.
+7.	User Profiles: Each user has a personalized profile page displaying their posts and information.
+8.	Recommendation: App recommends memories based on the current memories tags.
+9.	Search: Search is implemented based in title and tags.
 ## Technologies Used
 The Memories application leverages the following technologies:
 1.	Frontend: React.js, Redux (for state management), HTML, CSS
