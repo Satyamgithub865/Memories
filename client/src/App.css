@@ -1,0 +1,48 @@
+.heading {
+    position: relative;
+    animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.input-file input[type="file" i]::-webkit-file-upload-button {
+    padding: 10px;
+    color: white;
+    background-color: rgb(53, 53, 172);
+    border: none;
+    border-radius: 20px;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.zoomButton {
+    animation: zoomEffect 2s infinite;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
